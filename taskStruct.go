@@ -77,9 +77,9 @@ func deleteTask(taskCollection *mongo.Collection) {
 	fmt.Print("Enter the ID of the task that you want to delete : ")
 	var task_id int
 	fmt.Scanln(&task_id)
-	filter := bson.M{}
+	filter := bson.M{"Id": task_id}
 
-	_, err := taskCollection.DeleteMany(context.Background(), filter)
+	_, err := taskCollection.DeleteOne(context.Background(), filter)
 	if err != nil {
 		log.Fatal(err)
 	}

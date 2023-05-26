@@ -28,7 +28,7 @@ func main() {
 		}
 	}()
 
-	for true {
+	for {
 		command = showMenuAndGetCommand()
 		switch command {
 		case 1:
